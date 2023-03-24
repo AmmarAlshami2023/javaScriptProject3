@@ -15,15 +15,21 @@ const btnHold=document.querySelector('.btn--hold')
 
 score0El.textContent=0
 score1El.textContent=0 
+
+
 diceEl.classList.add('hidden');
 const scores=[0,0] 
 let currentScore=0
 let activePlayer=0 
 let playing=true;
+
+
 btnRoll.addEventListener('click',function()
 {
 if(playing){
 const dice =Math.trunc(Math.random()*6)+1
+
+
 console.log(dice)
 diceEl.src = `/Users/admin/Downloads/complete-javascript-course-master/07-Pig-Game/final/dice-${dice}.png`;
 
@@ -42,10 +48,13 @@ player1El.classList.toggle('player-active')
 
 }
 })
+
+
 btnHold.addEventListener('click',function(){
 if(playing){
 
-console.log(scores[activePlayer ])
+ 
+ console.log(scores[activePlayer ])
 scores[activePlayer]+= currentScore 
 document.getElementById(`score--${activePlayer}`).textContent=scores[activePlayer]; 
      
@@ -66,6 +75,8 @@ player1El.classList.toggle('player-active')
 } 
 }
 })
+
+
 btnNew.addEventListener('click',function(){
 score0El.textContent=0
 score1El.textContent =0 
